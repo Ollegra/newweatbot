@@ -1,0 +1,9 @@
+CREATE TABLE transform (
+    id     INTEGER PRIMARY KEY AUTOINCREMENT,
+    person TEXT,
+    datat  TEXT,
+    cod    TEXT,
+    cat    TEXT,
+    timex  TEXT,
+    timed  INTEGER
+);
