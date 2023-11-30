@@ -25,8 +25,6 @@ async def main():
 #keep_alive()
 
 if __name__ == '__main__':
-    logging.basicConfig(level=logging.INFO,
-                        format='%(asctime)s : %(name)s : %(levelname)s : %(message)s',
-                        encoding='UTF-8')
+    logging.basicConfig(level=logging.INFO, format='%(asctime)s : %(name)s : %(levelname)s : %(message)s', encoding='UTF-8')
     #logging.getLogger('urllib3').setLevel('WARNING')
     asyncio.run(main())
