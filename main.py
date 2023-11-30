@@ -1,6 +1,7 @@
 import asyncio
 import logging
 import os
+import dotenv
 from aiogram import Bot, Dispatcher
 from aiogram.enums.parse_mode import ParseMode
 from aiogram.fsm.storage.memory import MemoryStorage
@@ -12,11 +13,12 @@ import locale
 # aiogram==3.0.0b7
 
 locale.setlocale(locale.LC_ALL, '')
+dotenv.load_dotenv()
 
 db_start()
 
 async def main():
-    bot = Bot(token=os.getenv("TB_TOKEN"), parse_mode=ParseMode.HTML)
+    bot = Bot(token=os.getenv('TB_TOKEN'), parse_mode=ParseMode.HTML)
     dp = Dispatcher(bot=bot, storage=MemoryStorage())
     dp.include_router(router)
     await bot.delete_webhook(drop_pending_updates=True)
@@ -25,6 +27,6 @@ async def main():
 #keep_alive()
 
 if __name__ == '__main__':
-    logging.basicConfig(level=logging.INFO, format='%(asctime)s : %(name)s : %(levelname)s : %(message)s', encoding='UTF-8')
+    #logging.basicConfig(level=logging.INFO, format='%(asctime)s : %(name)s : %(levelname)s : %(message)s', encoding='UTF-8')
     #logging.getLogger('urllib3').setLevel('WARNING')
     asyncio.run(main())
