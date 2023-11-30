@@ -8,7 +8,7 @@ from handlers import router
 #from config import TB_TOKEN
 from tg_analytic import db_start
 import locale
-#from backg import keep_alive
+
 # aiogram==3.0.0b7
 
 locale.setlocale(locale.LC_ALL, '')
