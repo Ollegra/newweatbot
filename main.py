@@ -13,6 +13,7 @@ import locale
 # aiogram==3.0.0b7
 
 locale.setlocale(locale.LC_ALL, '')
+
 dotenv.load_dotenv()
 
 db_start()
@@ -27,6 +28,5 @@ async def main():
 #keep_alive()
 
 if __name__ == '__main__':
-    #logging.basicConfig(level=logging.INFO, format='%(asctime)s : %(name)s : %(levelname)s : %(message)s', encoding='UTF-8')
-    #logging.getLogger('urllib3').setLevel('WARNING')
+    logging.basicConfig(level=logging.INFO)
     asyncio.run(main())
